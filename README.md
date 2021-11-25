@@ -14,7 +14,7 @@ In order to use this example:
 
 - fork this repository
 - edit `netbox_inventory.yml` accordingly
-- create a project in AAP2 poiting to your fork
+- create a project in AAP2 pointing to your fork
 - create an inventory
 - create a new source in your inventory with type "Sources from a Project"
 - choose "/ (project root)" for the inventory file
