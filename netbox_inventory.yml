@@ -1,7 +1,7 @@
 plugin: netbox.netbox.nb_inventory
-api_endpoint: http://10.10.21.22:8000
+api_endpoint: https://netbox.labo.ovh
 # YOU SHOULD VAULT YOUR TOKEN. KEPT CLEAR FOR SAKE OF DEMO.
-token: eb02c568f2adb96fc7068cd14ccc0e11de48bafd
+token: 60a3f8a9283a563860d253b49b63f4f6d741ff62
 validate_certs: False
 config_context: False
 group_by:
