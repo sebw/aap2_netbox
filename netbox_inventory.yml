@@ -45,3 +45,5 @@ plugin: netbox.netbox.nb_inventory
 keyed_groups:
   - prefix: status
     key: status.value
+  - prefix: tag
+    key: tag.value
