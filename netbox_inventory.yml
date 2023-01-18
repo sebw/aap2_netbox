@@ -7,8 +7,8 @@ validate_certs: True
 config_context: False
 group_by:
   - device_roles
-query_filters:
-  - role: network-edge-router
+#query_filters:
+#  - role: network-edge-router
 device_query_filters:
   - has_primary_ip: 'true'
 
@@ -17,8 +17,8 @@ device_query_filters:
 # Query filters are passed directly as an argument to the fetching queries.
 # You can repeat tags in the query string.
 
-#query_filters:
-#  - role: server
+query_filters:
+  - role: server
 #  - tag: web
 #  - tag: production
 
