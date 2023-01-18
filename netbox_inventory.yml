@@ -1,3 +1,5 @@
+# https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_inventory_inventory.html
+
 plugin: netbox.netbox.nb_inventory
 api_endpoint: https://netbox.labo.ovh
 
@@ -8,12 +10,14 @@ validate_certs: True
 config_context: True
 
 group_by:
-  - device_roles
+  - site
+  - role
 
 # Filter out not connected items such as racks
 device_query_filters:
   - has_primary_ip: 'true'
 
+## Filter out decommissionned devices for example
 # query_filters:
 #  - status: active
 
