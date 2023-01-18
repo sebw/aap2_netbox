@@ -14,7 +14,6 @@ device_query_filters:
 query_filters:
   - status: active
 
-plugin: netbox.netbox.nb_inventory
 keyed_groups:
   - prefix: status
     key: status.value
