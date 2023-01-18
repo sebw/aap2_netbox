@@ -9,6 +9,9 @@ validate_certs: True
 
 config_context: True
 
+group_by:
+  - device_roles
+
 # Filter out not connected items such as racks
 device_query_filters:
   - has_primary_ip: 'true'
