@@ -19,7 +19,6 @@ device_query_filters:
 
 query_filters:
   - role: server
-  - tag: web
   - tag: production
 
 # See the NetBox documentation at https://netbox.readthedocs.io/en/stable/rest-api/overview/
@@ -45,4 +44,3 @@ plugin: netbox.netbox.nb_inventory
 keyed_groups:
   - prefix: status
     key: status.value
-#
