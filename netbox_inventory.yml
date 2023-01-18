@@ -13,8 +13,8 @@ group_by:
 device_query_filters:
   - has_primary_ip: 'true'
 
-query_filters:
-  - status: active
+# query_filters:
+#  - status: active
 
 keyed_groups:
   - prefix: status
