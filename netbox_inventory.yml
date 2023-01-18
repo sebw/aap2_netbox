@@ -3,7 +3,9 @@ api_endpoint: https://netbox.labo.ovh
 
 token: 60a3f8a9283a563860d253b49b63f4f6d741ff62
 validate_certs: True
-config_context: False
+
+config_context: True
+
 group_by:
   - device_roles
 
