@@ -3,8 +3,10 @@
 plugin: netbox.netbox.nb_inventory
 api_endpoint: https://netbox.labo.ovh
 
-# Read only token, feel free to use it if my Netbox instance is up and running. No warranty provided :D
-token: 60a3f8a9283a563860d253b49b63f4f6d741ff62
+# READ ONLY TOKEN
+# ONLY USED FOR DEMO. VAULT ALL YOUR TOKENS AND SECRETS!
+# Feel free to use it if my Netbox instance is up and running. No warranty of availability provided :D
+token: 7661a8ea30cdb5870c98dbcb7b3a2eacb99d52e8
 validate_certs: True
 
 config_context: True
