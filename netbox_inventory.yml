@@ -18,9 +18,9 @@ group_by:
 device_query_filters:
   - has_primary_ip: 'true'
 
-## Filter out decommissionned devices for example
-# query_filters:
-#  - status: active
+## Only retrieve active machines
+query_filters:
+  - status: active
 
 keyed_groups:
   - prefix: status
