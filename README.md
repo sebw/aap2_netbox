@@ -24,6 +24,48 @@ In order to use this example:
 - save and sync
 - in the hosts tab you should see your inventory items
 
+## Execution environment (EE)
+
+AAP2 does everything through execution environments (they are just containers with ansible, collections and other dependencies needed to run any job).
+
+The Netbox collection isn't present in standard AAP2 EE.
+
+You need to create your own EE with the Netbox collection in it.
+
+On a RHEL box:
+
+```bash
+dnf install --enablerepo=ansible-automation-platform-2.4-for-rhel-9-x86_64-rpms ansible-builder
+```
+
+Create an `execution-environment.yml` file:
+
+```yaml
+version: 3
+
+images:
+  base_image:
+    name: your.private.automation.hub.host/ee-minimal-rhel8:latest
+
+dependencies:
+  galaxy:
+    collections:
+      - netbox.netbox
+
+options:
+  package_manager_path: /usr/bin/microdnf
+```
+
+Tag and push your new image in Private Automation Hub
+
+```bash
+podman login your.private.automation.hub.host (user and pass specified in the inventory file you edited before installing AAP or found in your kubernetes secrets)
+podman tag localhost/ansible-execution-env your.private.automation.hub.host/ee-netbox-rhel8:latest
+podman push your.private.automation.hub.host/ee-netbox-rhel8:latest
+```
+
+You can now add this new EE in AAP2 and use it for the dynamic inventory source.
+
 ## Other resources
 
 ServiceNow CMDB: https://www.ansible.com/blog/using-an-inventory-plugin-from-a-collection-in-ansible-tower
