@@ -56,6 +56,12 @@ options:
   package_manager_path: /usr/bin/microdnf
 ```
 
+Build:
+
+```bash
+ansible-builder build
+```
+
 Tag and push your new image in Private Automation Hub
 
 ```bash
