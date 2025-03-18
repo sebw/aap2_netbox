@@ -55,6 +55,56 @@ Then:
 - save and sync
 - in the hosts tab you should see your inventory items
 
+## Building a customer Netbox Execution environment
+
+1. Install a Red Hat Enterprise Linux or Fedora machine
+2. Install podman and ansible-builder
+3. Create the following files in a directory you call netbox-ee
+execution-environment.yml
+```
+---
+version: 3
+images:
+  base_image:
+    name: registry.redhat.io/ansible-automation-platform-25/ee-supported-rhel8:latest
+
+dependencies:
+  galaxy: requirements.yml
+  python: requirements.txt
+  system: bindep.txt
+
+options:
+  package_manager_path: /usr/bin/microdnf
+```
+
+requirements.yml:
+```
+---
+collections:
+  - name: netbox.netbox
+```
+
+requirements.txt:
+```
+pytz
+pynetbox
+```
+
+bindep.txt:
+```
+gcc
+systemd-devel
+python3.11-devel
+```
+
+5. Build the execution environment
+```
+$ ansible-builder build -v3 -t netbox-inventory-ee
+```
+
+6. Make execution environment available in Ansible Automation Platform.  
+
+
 ## Other resources
 
 ServiceNow CMDB: https://www.ansible.com/blog/using-an-inventory-plugin-from-a-collection-in-ansible-tower
